@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightSmile Dental Clinic</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background: #0d6efd;
+      color: white;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img.logo {
+      height: 50px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 40px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(13, 110, 253, 0.7), rgba(13, 110, 253, 0.7)),
+        url("https://images.unsplash.com/photo-1606813902917-4aa8fdf4cf02?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: white;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      animation: fadeInDown 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .hero p {
+      animation: fadeInUp 1.2s ease 0.5s forwards;
+      opacity: 0;
+    }
+
+    .hero .btn {
+      animation: fadeInUp 1.2s ease 1s forwards;
+      opacity: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 30px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.4s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-10px) scale(1.07);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  border: 2px solid #4facfe; /* light blue border */
+  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+}
+
+/* Optional glow effect */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(79, 172, 254, 0.2), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .doctor img,
+    .feedback img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #0d6efd;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: #0b5ed7;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form button {
+      padding: 12px 20px;
+      border: none;
+      background: #0d6efd;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #0b5ed7;
+    }
+
+    footer {
+      background: #0d6efd;
+      color: white;
+      padding: 30px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    footer h4 {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #ddd;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+  <div class="logo-container">
+    <!-- Logo -->
+    <img
+      src="./assets/img/logo-image/dental-clinic-logo-neww.png" style="filter: brightness(0) invert(1); width:150px; height:auto;" alt="Clinic Logo" class="logo"
+    -- Clinic Name -->
+  </div>
+
+  <nav>
+    <ul>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="../website2/index.html">Child Clinic</a>
+    <a href="#appointment">Book Appointment</a>
+  </nav>
+</header>
+
+
+  <section id="home" class="hero">
+    <h1>Welcome to BrightSmile Dental Clinic</h1>
+    <p>Your smile is our priority – trusted dental care for every generation.</p>
+    <a href="#appointment" class="btn">Book an Appointment</a>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="grid grid-2">
+      <div>
+        <p>At BrightSmile Dental Center, we believe that a healthy smile is the foundation of confidence and overall
+          well-being. Our clinic is committed to delivering world-class dental care with a gentle touch, ensuring every
+          patient feels comfortable and cared for. With state-of-the-art facilities, modern dental technology, and a team
+          of highly qualified specialists, we provide comprehensive treatments ranging from preventive check-ups to
+          advanced restorative and cosmetic dentistry. We specialize in family and child-friendly care, making sure even
+          our youngest patients feel safe and relaxed. Our goal is to create a welcoming environment where patients of
+          all ages can enjoy a stress-free dental experience. At BrightSmile, your smile is our priority – and we are here
+          to ensure it stays bright, healthy, and lasting for years to come.</p>
+      </div>
+      <div>
+        <img src="C:\Users\Pradnya\Downloads\painless-treatment.jpg"
+          alt="Dental care">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Choose Us</h2>
+    <div class="grid grid-3">
+      <div class="card">Experienced Dentists</div>
+      <div class="card">Child-Friendly Care</div>
+      <div class="card">Modern Equipment</div>
+      <div class="card">Affordable Treatments</div>
+      <div class="card">Emergency Support</div>
+      <div class="card">Personalized Plans</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <div class="grid grid-3">
+      <div class="card">Teeth Cleaning</div>
+      <div class="card">Fillings & Restorations</div>
+      <div class="card">Root Canal Treatment</div>
+      <div class="card">Braces & Aligners</div>
+      <div class="card">Cosmetic Dentistry</div>
+      <div class="card">Dental Implants</div>
+      <div class="card">Crowns & Bridges</div>
+      <div class="card">Child Dentistry</div>
+      <div class="card">Wisdom Tooth Removal</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Doctors</h2>
+    <div class="grid grid-3">
+      <div class="card doctor"><img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <h4>Dr. Arjun Mehta</h4>
+        <p>Orthodontist</p>
+      </div>
+      <div class="card doctor"><img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <h4>Dr. Priya Sharma</h4>
+        <p>Pediatric Dentist</p>
+      </div>
+      <div class="card doctor"><img src="https://randomuser.me/api/portraits/men/46.jpg">
+        <h4>Dr. Rohit Desai</h4>
+        <p>Implant Specialist</p>
+      </div>
+      <div class="card doctor"><img src="https://randomuser.me/api/portraits/women/67.jpg">
+        <h4>Dr. Kavya Iyer</h4>
+        <p>Endodontist</p>
+      </div>
+      <div class="card doctor"><img src="https://randomuser.me/api/portraits/men/85.jpg">
+        <h4>Dr. Sameer Kulkarni</h4>
+        <p>Cosmetic Dentist</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Patient Feedback</h2>
+    <div class="grid grid-3">
+      <div class="card feedback"><img src="https://randomuser.me/api/portraits/women/10.jpg">
+        <p>“Amazing experience, caring staff!”</p><strong>- Neha</strong>
+      </div>
+      <div class="card feedback"><img src="https://randomuser.me/api/portraits/men/11.jpg">
+        <p>“They made my child so comfortable.”</p><strong>- Rohan</strong>
+      </div>
+      <div class="card feedback"><img src="https://randomuser.me/api/portraits/women/14.jpg">
+        <p>“Professional and affordable service.”</p><strong>- Aarti</strong>
+      </div>
+      <div class="card feedback"><img src="https://randomuser.me/api/portraits/men/20.jpg">
+        <p>“Highly recommend this clinic!”</p><strong>- Karan</strong>
+      </div>
+      <div class="card feedback"><img src="https://randomuser.me/api/portraits/women/25.jpg">
+        <p>“Best dental care I ever had.”</p><strong>- Sneha</strong>
+      </div>
+      <div class="card feedback"><img src="https://randomuser.me/api/portraits/men/30.jpg">
+        <p>“Friendly doctors, great facilities.”</p><strong>- Aditya</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="appointment">
+    <h2>Book Appointment</h2>
+    <form onsubmit="event.preventDefault();alert('Appointment is booked!')">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Phone" required>
+      <select required>
+        <option value="">Select Service</option>
+        <option>Cleaning</option>
+        <option>Braces</option>
+        <option>Implants</option>
+        <option>Child Dentistry</option>
+      </select>
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h4>Address</h4>
+        <p>NC Kelkar Road, Narayan Peth, Pune, Maharashtra 411030</p>
+      </div>
+      <div class="card">
+        <h4>Hours</h4>
+        <p>Monday - Saturday: 8AM to 10PM
+Sunday: Closed</p>
+      </div>
+      <div class="card">
+        <h4>Contact</h4>
+        <p>Mobile: +1 5589 55488 55
+Email: brightsmiledentalcenter@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <h4>BrightSmile Dental Clinic</h4>
+      <p>BrightSmile Dental Clinic – Your trusted partner in oral health for all ages.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="#">Cleaning</a>
+      <a href="#">Braces</a>
+      <a href="#">Implants</a>
+      <a href="#">Child Dentistry</a>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#child">Child Clinic</a>
+      <a href="#appointment">Book Appointment</a>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal sections/cards on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section, .card').forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
