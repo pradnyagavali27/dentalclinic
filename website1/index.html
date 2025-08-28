@@ -34,12 +34,63 @@
       text-decoration: none;
       color: white;
       font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: white;
     }
 
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #fff;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-scrolled {
+      background-color: #0d6efd;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      width: 40px;
+      height: 40px;
+      background: #0d6efd;
+      color: white;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      z-index: 1001;
+    }
+
+    .scroll-top:hover {
+      background: #0b5ed7;
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     section {
       padding: 60px 40px;
       text-align: center;
@@ -48,10 +99,6 @@
       transition: all 0.8s ease;
     }
 
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
 
     .hero {
       background: linear-gradient(rgba(13, 110, 253, 0.7), rgba(13, 110, 253, 0.7)),
@@ -105,8 +152,8 @@
 
 /* Hover effect */
 .card:hover {
-  transform: translateY(-10px) scale(1.07);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   opacity: 1;
   border: 2px solid #4facfe; /* light blue border */
   background: linear-gradient(135deg, #ffffff, #f0f9ff);
@@ -160,10 +207,12 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .btn:hover {
       background: #0b5ed7;
+      transform: translateY(-2px);
     }
 
     form input,
@@ -259,13 +308,13 @@
 </header>
 
 
-  <section id="home" class="hero">
+  <section id="home" class="hero fade-in-section">
     <h1>Welcome to BrightSmile Dental Clinic</h1>
     <p>Your smile is our priority – trusted dental care for every generation.</p>
     <a href="#appointment" class="btn">Book an Appointment</a>
   </section>
 
-  <section id="about">
+  <section id="about" class="fade-in-section">
     <h2>About Us</h2>
     <div class="grid grid-2">
       <div>
@@ -285,84 +334,84 @@
     </div>
   </section>
 
-  <section>
+  <section class="fade-in-section">
     <h2>Why Choose Us</h2>
     <div class="grid grid-3">
-      <div class="card">Experienced Dentists</div>
-      <div class="card">Child-Friendly Care</div>
-      <div class="card">Modern Equipment</div>
-      <div class="card">Affordable Treatments</div>
-      <div class="card">Emergency Support</div>
-      <div class="card">Personalized Plans</div>
+      <div class="card fade-in-section">Experienced Dentists</div>
+      <div class="card fade-in-section">Child-Friendly Care</div>
+      <div class="card fade-in-section">Modern Equipment</div>
+      <div class="card fade-in-section">Affordable Treatments</div>
+      <div class="card fade-in-section">Emergency Support</div>
+      <div class="card fade-in-section">Personalized Plans</div>
     </div>
   </section>
 
-  <section>
+  <section class="fade-in-section">
     <h2>Our Services</h2>
     <div class="grid grid-3">
-      <div class="card">Teeth Cleaning</div>
-      <div class="card">Fillings & Restorations</div>
-      <div class="card">Root Canal Treatment</div>
-      <div class="card">Braces & Aligners</div>
-      <div class="card">Cosmetic Dentistry</div>
-      <div class="card">Dental Implants</div>
-      <div class="card">Crowns & Bridges</div>
-      <div class="card">Child Dentistry</div>
-      <div class="card">Wisdom Tooth Removal</div>
+      <div class="card fade-in-section">Teeth Cleaning</div>
+      <div class="card fade-in-section">Fillings & Restorations</div>
+      <div class="card fade-in-section">Root Canal Treatment</div>
+      <div class="card fade-in-section">Braces & Aligners</div>
+      <div class="card fade-in-section">Cosmetic Dentistry</div>
+      <div class="card fade-in-section">Dental Implants</div>
+      <div class="card fade-in-section">Crowns & Bridges</div>
+      <div class="card fade-in-section">Child Dentistry</div>
+      <div class="card fade-in-section">Wisdom Tooth Removal</div>
     </div>
   </section>
 
-  <section>
+  <section class="fade-in-section">
     <h2>Our Doctors</h2>
     <div class="grid grid-3">
-      <div class="card doctor"><img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <div class="card doctor fade-in-section"><img src="https://randomuser.me/api/portraits/men/32.jpg">
         <h4>Dr. Arjun Mehta</h4>
         <p>Orthodontist</p>
       </div>
-      <div class="card doctor"><img src="https://randomuser.me/api/portraits/women/44.jpg">
+      <div class="card doctor fade-in-section"><img src="https://randomuser.me/api/portraits/women/44.jpg">
         <h4>Dr. Priya Sharma</h4>
         <p>Pediatric Dentist</p>
       </div>
-      <div class="card doctor"><img src="https://randomuser.me/api/portraits/men/46.jpg">
+      <div class="card doctor fade-in-section"><img src="https://randomuser.me/api/portraits/men/46.jpg">
         <h4>Dr. Rohit Desai</h4>
         <p>Implant Specialist</p>
       </div>
-      <div class="card doctor"><img src="https://randomuser.me/api/portraits/women/67.jpg">
+      <div class="card doctor fade-in-section"><img src="https://randomuser.me/api/portraits/women/67.jpg">
         <h4>Dr. Kavya Iyer</h4>
         <p>Endodontist</p>
       </div>
-      <div class="card doctor"><img src="https://randomuser.me/api/portraits/men/85.jpg">
+      <div class="card doctor fade-in-section"><img src="https://randomuser.me/api/portraits/men/85.jpg">
         <h4>Dr. Sameer Kulkarni</h4>
         <p>Cosmetic Dentist</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="fade-in-section">
     <h2>Patient Feedback</h2>
     <div class="grid grid-3">
-      <div class="card feedback"><img src="https://randomuser.me/api/portraits/women/10.jpg">
+      <div class="card feedback fade-in-section"><img src="https://randomuser.me/api/portraits/women/10.jpg">
         <p>“Amazing experience, caring staff!”</p><strong>- Neha</strong>
       </div>
-      <div class="card feedback"><img src="https://randomuser.me/api/portraits/men/11.jpg">
+      <div class="card feedback fade-in-section"><img src="https://randomuser.me/api/portraits/men/11.jpg">
         <p>“They made my child so comfortable.”</p><strong>- Rohan</strong>
       </div>
-      <div class="card feedback"><img src="https://randomuser.me/api/portraits/women/14.jpg">
+      <div class="card feedback fade-in-section"><img src="https://randomuser.me/api/portraits/women/14.jpg">
         <p>“Professional and affordable service.”</p><strong>- Aarti</strong>
       </div>
-      <div class="card feedback"><img src="https://randomuser.me/api/portraits/men/20.jpg">
+      <div class="card feedback fade-in-section"><img src="https://randomuser.me/api/portraits/men/20.jpg">
         <p>“Highly recommend this clinic!”</p><strong>- Karan</strong>
       </div>
-      <div class="card feedback"><img src="https://randomuser.me/api/portraits/women/25.jpg">
+      <div class="card feedback fade-in-section"><img src="https://randomuser.me/api/portraits/women/25.jpg">
         <p>“Best dental care I ever had.”</p><strong>- Sneha</strong>
       </div>
-      <div class="card feedback"><img src="https://randomuser.me/api/portraits/men/30.jpg">
+      <div class="card feedback fade-in-section"><img src="https://randomuser.me/api/portraits/men/30.jpg">
         <p>“Friendly doctors, great facilities.”</p><strong>- Aditya</strong>
       </div>
     </div>
   </section>
 
-  <section id="appointment">
+  <section id="appointment" class="fade-in-section">
     <h2>Book Appointment</h2>
     <form onsubmit="event.preventDefault();alert('Appointment is booked!')">
       <input type="text" placeholder="Full Name" required>
@@ -380,19 +429,19 @@
     </form>
   </section>
 
-  <section>
+  <section class="fade-in-section">
     <h2>Contact Us</h2>
     <div class="grid grid-3">
-      <div class="card">
+      <div class="card fade-in-section">
         <h4>Address</h4>
         <p>NC Kelkar Road, Narayan Peth, Pune, Maharashtra 411030</p>
       </div>
-      <div class="card">
+      <div class="card fade-in-section">
         <h4>Hours</h4>
         <p>Monday - Saturday: 8AM to 10PM
 Sunday: Closed</p>
       </div>
-      <div class="card">
+      <div class="card fade-in-section">
         <h4>Contact</h4>
         <p>Mobile: +1 5589 55488 55
 Email: brightsmiledentalcenter@gmail.com</p>
@@ -421,17 +470,48 @@ Email: brightsmiledentalcenter@gmail.com</p>
     </div>
   </footer>
 
+  <a href="#" class="scroll-top">↑</a>
+
   <script>
-    // Reveal sections/cards on scroll
+    // Reveal sections and cards on scroll
+    const animatedElements = document.querySelectorAll('.fade-in-section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          entry.target.classList.add('is-visible');
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
 
-    document.querySelectorAll('section, .card').forEach(el => observer.observe(el));
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+
+    // Scroll to top button
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        scrollTopBtn.style.display = 'block';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+    scrollTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   </script>
 </body>
 
