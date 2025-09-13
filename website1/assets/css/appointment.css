@@ -1,0 +1,103 @@
+/*--------------------------------------------------------------
+# Appointment Section
+--------------------------------------------------------------*/
+#appointment {
+  padding: 60px 20px;
+  background: #f9f9f9;   /* Light background for contrast */
+}
+
+#appointment h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+#appointment form {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#appointment form input,
+#appointment form textarea,
+#appointment form button {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+#appointment form input:focus,
+#appointment form textarea:focus {
+  border: 1px solid #007BFF; /* Blue border on focus */
+}
+
+#appointment form button {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#appointment form button:hover {
+  background: #0056b3;
+}
+
+/*--------------------------------------------------------------
+# Popup Styles
+--------------------------------------------------------------*/
+#popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#popup .popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+#popup h2 {
+  margin-bottom: 15px;
+  color: #28a745;
+  font-size: 22px;
+}
+
+#popup button {
+  padding: 10px 20px;
+  background: #28a745;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#popup button:hover {
+  background: #1e7e34;
+}

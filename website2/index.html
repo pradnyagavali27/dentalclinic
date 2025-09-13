@@ -26,14 +26,124 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+<style>
+header {
+      background: #0d6efd;
+      color: white;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  <!-- =======================================================
-  * Template Name: Invent
-  * Template URL: https://bootstrapmade.com/invent-bootstrap-business-template/
-  * Updated: May 12 2025 with Bootstrap v5.3.6
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    header img.logo {
+      height: 50px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: rgb(10, 1, 1);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: #080000;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-scrolled {
+      background-color: #0d6efd;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+  </style>
+
+
+
+
+  <style>
+  /* Footer Styling */
+  #footer {
+    background: #2956de;
+    color: #fff;
+    padding: 40px 0;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.25);
+    margin-top: 40px;
+  }
+
+  #footer h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f8f9fa;
+    margin-bottom: 20px;
+  }
+
+  #footer a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  #footer a:hover {
+    color: #fff;
+  }
+
+  #footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #444;
+    color: #fff;
+    line-height: 36px;
+    margin-right: 8px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  #footer .social-links a:hover {
+    background: #0d6efd;
+    color: #fff;
+  }
+
+  #footer .footer-contact p {
+    margin: 5px 0;
+  }
+
+  #footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #footer ul li {
+    margin: 8px 0;
+  }
+</style>
+
+
+  
 </head>
 
 <body class="index-page">
@@ -48,12 +158,12 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#make an appointment">Make an appointment</a></li>
+          <li><a href="#appointment">Make an appointment</a></li>
           <li><a href="../Website1/index.html">Main Clinic</a></li>
           
 
 
-      <a class="btn-getstarted" href="#about">Get Started</a>
+     
 
     </div>
   </header>
@@ -272,7 +382,7 @@ Customized oral hygiene guidance.
             <div class="service-item">
               
               <div class="service-content">
-                <h3>🦷 5. Space Maintainers & Pediatric Crowns</h3>
+                <h3>🦷 4. Space Maintainers & Pediatric Crowns</h3>
                 <p>If baby teeth are lost early, we use space maintainers to guide permanent teeth correctly. For severely decayed teeth, pediatric stainless-steel or zirconia crowns are provided.
 
 </p>
@@ -285,7 +395,7 @@ Customized oral hygiene guidance.
             <div class="service-item">
               
               <div class="service-content">
-                <h3>🚨 6. Emergency Dental Care for Children</h3>
+                <h3>🚨 5. Emergency Dental Care for Children</h3>
                 <p>Accidents happen — we’re here when they do. Whether it’s a knocked-out tooth, oral injury, or severe toothache, our team provides urgent care to relieve pain and save the tooth.
 
 </p>
@@ -298,7 +408,7 @@ Customized oral hygiene guidance.
             <div class="service-item">
               
               <div class="service-content">
-                <h3>🎓 7. Dental Education & Habit Building</h3>
+                <h3>🎓 6. Dental Education & Habit Building</h3>
                 <p>We teach children how to brush and floss properly, explain dental topics using fun stories and cartoons, and build confidence in taking care of their teeth every day.
 
 </p>
@@ -368,76 +478,48 @@ Customized oral hygiene guidance.
       </div>
     </section><!-- /Contact Section -->
 
-   <!-- Appointment Section -->
-<section id="appointment" class="appointment section light-background">
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>MAKE AN APPOINTMENT</h2>
-  </div><!-- End Section Title -->
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <form id="appointmentForm" action="forms/appointment.php" method="post" role="form" class="php-email-form">
-      <div class="row">
-        <div class="col-md-4 form-group">
-          <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-        </div>
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-          <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-        </div>
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-          <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 form-group mt-3">
-          <input type="datetime-local" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required="">
-        </div>
-        <div class="col-md-4 form-group mt-3">
-          <select name="department" id="department" class="form-select" required="">
-            <option value="">Select Services</option>
-            <option value="Service 1">First Dental Visit (Age 1 and Up)</option>
-            <option value="Service 2">Preventive Dental Care</option>
-            <option value="Service 3">Cavity Treatments & Fillings</option>
-            <option value="Services 4">Early Orthodontic Evaluation & Brace</option>
-            <option value="Services 5">Space Maintainers & Pediatric Crowns</option>
-            <option value="Services 6">Dental Education & Habit Building</option>
-          </select>
-        </div>
-        <div class="col-md-4 form-group mt-3">
-          <select name="doctor" id="doctor" class="form-select" required="">
-            <option value="">Select Doctor</option>
-            <option value="Doctor 1">Dr.Sneha Patil</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group mt-3">
-        <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-      </div>
-      <div class="mt-3">
-        <div class="loading">Loading</div>
-        <div class="error-message"></div>
-        <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-
-        <div class="text-center">
-          <button type="submit" style="
-            background-color: #1b2cee;
-            color: rgb(255, 253, 253);
-            padding: 10px 25px;
-            border: none;
-            border-radius: 5px;
-            margin-top: 15px;
-            font-weight: bold;
-          ">Make an Appointment</button>
-        </div>
-      </div>
-    </form>
-
+<!-- Appointment Section -->
+<section id="appointment" class="appointment section light-background" style="padding:50px 0; background:#f8f9fc;">
+  <div class="container section-title" data-aos="fade-up" style="text-align:center; margin-bottom:30px;">
+    <h2 style="font-size:32px; font-weight:700; color:#050505;">MAKE AN APPOINTMENT</h2>
+    <p style="color:#555;">Book your dental appointment easily with our quick form</p>
   </div>
 
-</section><!-- /Appointment Section -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100" style="max-width:600px; margin:auto;">
+    <form id="appointmentForm" action="#" method="post" style="background:#fff; padding:30px; border-radius:15px; box-shadow:0px 8px 25px rgba(0,0,0,0.1); display:flex; flex-direction:column; gap:15px;">
+      
+      <input type="text" placeholder="Full Name" required 
+        style="padding:12px 15px; border:1px solid #ddd; border-radius:8px; font-size:16px; outline:none; transition:0.3s;">
+      
+      <input type="email" placeholder="Email" required 
+        style="padding:12px 15px; border:1px solid #ddd; border-radius:8px; font-size:16px; outline:none; transition:0.3s;">
+      
+      <input type="tel" placeholder="Phone" required 
+        style="padding:12px 15px; border:1px solid #ddd; border-radius:8px; font-size:16px; outline:none; transition:0.3s;">
+      
+      <select required 
+        style="padding:12px 15px; border:1px solid #ddd; border-radius:8px; font-size:16px; outline:none; background:#fff;">
+        <option value="">Select Service</option>
+        <option>First Dental Visit (Age 1 and Up)</option>
+        <option>Preventive Dental Care</option>
+        <option>Cavity Treatments & Fillings</option>
+        <option>Space Maintainers & Pediatric Crowns</option>
+        <option>Emergency Dental Care for Children</option>
+        <option>Dental Education & Habit Building</option>
+      </select>
+      
+      <textarea placeholder="Message" rows="4"
+        style="padding:12px 15px; border:1px solid #ddd; border-radius:8px; font-size:16px; outline:none;"></textarea>
+      
+      <button type="submit" 
+        style="padding:14px; background:#1b2cee; color:#fff; border:none; border-radius:8px; font-size:18px; font-weight:bold; cursor:pointer; transition:0.3s;">
+        Submit Appointment
+      </button>
+    </form>
+  </div>
+</section>
 
 <!-- Modal -->
 <div id="appointmentModal" style="
@@ -445,14 +527,14 @@ Customized oral hygiene guidance.
   background-color:rgba(0,0,0,0.5); justify-content:center; align-items:center;
 ">
   <div style="
-    background-color:#fff; padding:30px; border-radius:10px; text-align:center;
-    max-width:400px; margin:auto;
+    background-color:#fff; padding:30px; border-radius:15px; text-align:center;
+    max-width:400px; margin:auto; box-shadow:0px 8px 25px rgba(0,0,0,0.2);
   ">
-    <h3>Appointment Booked!</h3>
-    <p>Your appointment has been booked successfully.</p>
+    <h3 style="color:#1b2cee;">Appointment Booked!</h3>
+    <p style="color:#444;">Your appointment has been booked successfully.</p>
     <button id="closeModal" style="
       background-color:#1b2cee; color:#fff; border:none; padding:10px 20px;
-      border-radius:5px; font-weight:bold; cursor:pointer;
+      border-radius:8px; font-weight:bold; cursor:pointer;
     ">Close</button>
   </div>
 </div>
@@ -463,16 +545,15 @@ Customized oral hygiene guidance.
   const closeModal = document.getElementById('closeModal');
 
   form.addEventListener('submit', function(event) {
-    event.preventDefault(); // prevent default form submission
-    modal.style.display = 'flex'; // show modal
-    form.reset(); // clear form
+    event.preventDefault(); 
+    modal.style.display = 'flex'; 
+    form.reset(); 
   });
 
   closeModal.addEventListener('click', function() {
-    modal.style.display = 'none'; // hide modal
+    modal.style.display = 'none'; 
   });
 
-  // Close modal if clicked outside modal box
   window.addEventListener('click', function(e) {
     if (e.target == modal) {
       modal.style.display = 'none';
@@ -483,55 +564,52 @@ Customized oral hygiene guidance.
 
 
 
-  
 
-  <footer id="footer" class="footer light-background">
+  <!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="container">
+    <div class="row gy-4">
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">BrightSmile Dental Center</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>NC Kelkar Road, Narayan Peth</p>
-            <p>Pune, Maharashtra 411030</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>brightsmiledentalcenter@gmail.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
+      <div class="col-lg-4 col-md-6 footer-info">
+        <h4>BrightSmile Dental Center</h4>
+        <p>Your smile, our priority. We provide top dental care with modern facilities.</p>
+        <div class="social-links d-flex mt-3">
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
         </div>
+      </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
+      <div class="col-lg-4 col-md-6 footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          BrightSmile Dental Center<br>
+          Pune, Maharashtra, India<br><br>
+          <strong>Phone:</strong> +91 98765 43210<br>
+          <strong>Email:</strong> info@brightsmile.com<br>
+        </p>
+      </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-             <li><a href="#">Teeth Cleaning & Checkups</a></li>
-            <li><a href="#">Braces & Invisalign</a></li>
-            <li><a href="#">Root Canal Treatments</a></li>
-            <li><a href="#">Child Dentistry</a></li>
-            <li><a href="#">Dental Implants</a></li>
-          </ul>
-        </div>
+      <div class="col-lg-4 col-md-6 footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+        </ul>
+      </div>
 
-        
-   
-  </footer>
+    </div>
+  </div>
+
+  <div class="container text-center mt-4">
+    <p>&copy; 2025 BrightSmile Dental Center. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- End Footer -->
+
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

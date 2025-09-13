@@ -212,4 +212,20 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+
+
+// Show popup on form submit
+document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("popup").style.display = "flex";
+});
+
+// Close popup when button is clicked
+document.getElementById("closeBtn").addEventListener("click", function() {
+  document.getElementById("popup").style.display = "none";
+});
+
+
+
+
 })();

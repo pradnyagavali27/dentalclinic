@@ -27,13 +27,92 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Invent
-  * Template URL: https://bootstrapmade.com/invent-bootstrap-business-template/
-  * Updated: May 12 2025 with Bootstrap v5.3.6
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index -BrightSmile Dental Center</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Footer CSS -->
+  <style>
+    /* Footer Styling */
+    #footer {
+      background: #222;
+      color: #fff;
+      padding: 40px 0;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.25);
+      margin-top: 40px;
+    }
+
+    #footer h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f8f9fa;
+      margin-bottom: 20px;
+    }
+
+    #footer a {
+      color: #bbb;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    #footer a:hover {
+      color: #fff;
+    }
+
+    #footer .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: #444;
+      color: #fff;
+      line-height: 36px;
+      margin-right: 8px;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    #footer .social-links a:hover {
+      background: #0d6efd;
+      color: #fff;
+    }
+
+    #footer .footer-contact p {
+      margin: 5px 0;
+    }
+  </style>
+
+
+
+
+
 </head>
 
 <body class="index-page">
@@ -50,7 +129,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#make an appointment">Make an appointment</a></li>
+          <li><a href="#appointment">Make an appointment</a></li>
           <li><a href="../Website1/index.html">Main Clinic</a></li>
 
           
@@ -376,11 +455,15 @@ Customized oral hygiene guidance.
       </div>
     </section><!-- /Contact Section -->
 
+
+
    <!-- Appointment Section -->
     <section id="appointment" class="appointment section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
+
+        
         <h2>MAKE AN APPOINTMENT</h2>
         
       </div><!-- End Section Title -->
@@ -417,15 +500,8 @@ Customized oral hygiene guidance.
 
               </select>
             </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select" required="">
-                <option value="">Select Doctor</option>
-                
-                <option value="Doctor 1">Dr.Sneha Patil</option>
-                
-              </select>
-            </div>
-          </div>
+           
+          
 
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
@@ -452,53 +528,49 @@ Customized oral hygiene guidance.
     </section><!-- /Appointment Section -->
   </main>
 
-  <footer id="footer" class="footer light-background">
+  <!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="container">
+    <div class="row gy-4">
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">BrightSmile Dental Center</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>NC Kelkar Road, Narayan Peth</p>
-            <p>Pune, Maharashtra 411030</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>brightsmiledentalcenter@gmail.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
+      <div class="col-lg-4 col-md-6 footer-info">
+        <h4>BrightSmile Dental Center</h4>
+        <p>Your smile, our priority. We provide top dental care with modern facilities.</p>
+        <div class="social-links d-flex mt-3">
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
         </div>
+      </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
+      <div class="col-lg-4 col-md-6 footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          BrightSmile Dental Center<br>
+          Pune, Maharashtra, India<br><br>
+          <strong>Phone:</strong> +91 98765 43210<br>
+          <strong>Email:</strong> info@brightsmile.com<br>
+        </p>
+      </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-             <li><a href="#">Teeth Cleaning & Checkups</a></li>
-            <li><a href="#">Braces & Invisalign</a></li>
-            <li><a href="#">Root Canal Treatments</a></li>
-            <li><a href="#">Child Dentistry</a></li>
-            <li><a href="#">Dental Implants</a></li>
-          </ul>
-        </div>
+      <div class="col-lg-4 col-md-6 footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+        </ul>
+      </div>
 
-        
-   
-  </footer>
+    </div>
+  </div>
+
+  <div class="container text-center mt-4">
+    <p>&copy; 2025 BrightSmile Dental Center. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- End Footer -->
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

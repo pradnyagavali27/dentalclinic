@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BrightSmile Dental Clinic</title>
+
+  <!-- Link external CSS file for Appointment Section -->
+ <link rel="stylesheet" href="css/appointment.css">
+
+  
   <style>
     body {
       margin: 0;
@@ -286,6 +291,10 @@
         transform: translateY(0);
       }
     }
+
+
+    
+
   </style>
 </head>
 
@@ -294,7 +303,7 @@
   <div class="logo-container">
     <!-- Logo -->
     <img
-      src="./assets/img/logo-image/dental-clinic-logo-neww.png" style="filter: brightness(0) invert(1); width:150px; height:auto;" alt="Clinic Logo" class="logo"
+      src="./assets/img/logo-image/dental-clinic-logo-neww.png" style="filter: brightness(0) invert(1); width:200px; height:auto;" alt="Clinic Logo" class="logo"
     -- Clinic Name -->
   </div>
 
@@ -411,24 +420,56 @@
     </div>
   </section>
 
-  <section id="appointment" class="fade-in-section">
-    <h2>Book Appointment</h2>
-    <form onsubmit="event.preventDefault();alert('Appointment is booked!')">
+<body>
+
+
+<!-- Appointment Section -->
+<section id="appointment" class="appointment-section">
+  <div class="appointment-title">
+    <h2>MAKE AN APPOINTMENT</h2>
+    <p>Book your dental appointment easily with our quick form</p>
+  </div>
+
+  <div class="appointment-container">
+    <form id="appointmentForm">
       <input type="text" placeholder="Full Name" required>
       <input type="email" placeholder="Email" required>
       <input type="tel" placeholder="Phone" required>
+
       <select required>
         <option value="">Select Service</option>
-        <option>Cleaning</option>
-        <option>Braces</option>
-        <option>Implants</option>
-        <option>Child Dentistry</option>
+        <option>First Dental Visit (Age 1 and Up)</option>
+        <option>Preventive Dental Care</option>
+        <option>Cavity Treatments & Fillings</option>
+        <option>Space Maintainers & Pediatric Crowns</option>
+        <option>Emergency Dental Care for Children</option>
+        <option>Dental Education & Habit Building</option>
       </select>
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
 
+      <textarea placeholder="Message" rows="4"></textarea>
+      <button type="submit">Submit Appointment</button>
+    </form>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="appointmentModal" class="appointment-modal">
+  <div class="appointment-modal-content">
+    <h3>Appointment Booked!</h3>
+    <p>Your appointment has been booked successfully.</p>
+    <button id="closeModal">Close</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  
+<!---contact section-->
   <section class="fade-in-section">
     <h2>Contact Us</h2>
     <div class="grid grid-3">
@@ -448,6 +489,7 @@ Email: brightsmiledentalcenter@gmail.com</p>
       </div>
     </div>
   </section>
+<!--contact section END-->
 
   <footer>
     <div>
